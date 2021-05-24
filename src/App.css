@@ -6,8 +6,8 @@ body, .nav{
 }
 /***cartes***/
 .cart{
-    display: flex;
-    flex-wrap: wrap;
+    display: flex !important;
+    flex-wrap: wrap !important;
     justify-content: space-evenly;
   }
   .carte{
@@ -119,10 +119,12 @@ hr{
   padding-right: 0.3rem;
   margin-top: 0.2rem;
 }
-.btn{
+.btnt{
   background-color: transparent !important;
   border: none !important;
 }
+
+
 /* 
 .container{
     padding: 0 40px;

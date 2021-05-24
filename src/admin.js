@@ -1,12 +1,12 @@
 
 import axios from 'axios';
 import React, {useState} from 'react'
-import { Button, Form } from "react-bootstrap";
+import { Button, Form, Modal} from "react-bootstrap";
 
 const Admin =() => {
         const[input,setInput]=useState(
           {Title :"",
-          Desc:"",
+          Genre:"",
           Img :""
          }
         )
@@ -26,10 +26,26 @@ const Admin =() => {
     axios.post('http://localhost:3004/posts',input).then((response)=> console.log(response))
     .catch((error)=> console.log('error'))
     }
-
+    const [show, setShow] = useState(false);
       return(
-    <div className="color">
-    <Form onSubmit={handleSubmit} className="col-md-4 form">
+        <>
+        <Button variant="primary" onClick={() => setShow(true)}>
+          Add Movie
+        </Button>
+  
+        <Modal
+          show={show}
+          onHide={() => setShow(false)}
+          dialogClassName="modal-90w"
+          aria-labelledby="example-custom-modal-styling-title"
+        >
+          <Modal.Header closeButton>
+            <Modal.Title id="example-custom-modal-styling-title">
+              Custom Modal Styling
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body> 
+          <Form onSubmit={handleSubmit}>
     
     <Form.Group>
         <Form.Label>Title</Form.Label>
@@ -39,7 +55,7 @@ const Admin =() => {
     
       <Form.Group>
         <Form.Label>Desc</Form.Label>
-        <Form.Control onChange={handleChange} value={input.Desc} name="Desc" type="text" placeholder="Enter desc" />
+        <Form.Control onChange={handleChange} value={input.Genre} name="Desc" type="text" placeholder="Enter Genre" />
       </Form.Group>
     
     
@@ -49,11 +65,13 @@ const Admin =() => {
       </Form.Group>
       <Button type="submit" className="m-2">Submit</Button>
     </Form>
-    <Button type="submit" className="m-2">Delete</Button>
+          </Modal.Body>
+        </Modal>
+      </>
+    );
+  }
+       
     
-    </div>
-       )
-    
-}
+
 
 export default Admin;

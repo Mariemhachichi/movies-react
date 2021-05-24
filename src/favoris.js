@@ -6,7 +6,7 @@ const Favor = ({favoritMovie, favorites}) => {
   return(
     <div>
       <Navb  favorites={favorites}/>
-       <div className="container d-flex flex-wrap mt-5">
+       <div className="container cart">
        {favoritMovie.map((el)=>
           <div>
        <div className="card ms-3">
@@ -14,7 +14,7 @@ const Favor = ({favoritMovie, favorites}) => {
   <Card.Img className="img" variant="top" src={el.Images} />
   <Card.Body>
     <Card.Title className="titr"> {el.Title} </Card.Title>
-    <Card.Text className="txt" >{el.Awards}</Card.Text>
+    <Card.Text className="txt" >{el.Genre}</Card.Text>
     <Card.Link className="link" href="#">{el.Rate}</Card.Link>
   </Card.Body>
 </Card>    
