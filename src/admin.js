@@ -1,6 +1,6 @@
 
 import axios from 'axios';
-import React, { useState } from 'react'
+import React, {useState} from 'react'
 import { Button, Form } from "react-bootstrap";
 
 const Admin =() => {
@@ -8,7 +8,6 @@ const Admin =() => {
           {Title :"",
           Desc:"",
           Img :""
-    
          }
         )
        const handleChange=(e)=>{
@@ -17,9 +16,9 @@ const Admin =() => {
       {  ...input,
         [name]:value
     });
-    
        }
-    //*************add to file json */
+      
+      /*add  */
     const handleSubmit=(e)=>{
     e.preventDefault()
     console.log('input',input)
@@ -27,6 +26,7 @@ const Admin =() => {
     axios.post('http://localhost:3004/posts',input).then((response)=> console.log(response))
     .catch((error)=> console.log('error'))
     }
+
       return(
     <div className="color">
     <Form onSubmit={handleSubmit} className="col-md-4 form">
@@ -47,17 +47,13 @@ const Admin =() => {
         <Form.Label>Img</Form.Label>
         <Form.Control  onChange={handleChange}  value={input.Img} name="Img"  type="text" placeholder="enter lien d'image" />
       </Form.Group>
-      <Button type="submit" className="m-2">Add</Button>
-      <Button type="submit" className="m-2">Edit</Button>
-      <Button type="submit" className="m-2">Delete</Button>
+      <Button type="submit" className="m-2">Submit</Button>
     </Form>
-    
+    <Button type="submit" className="m-2">Delete</Button>
     
     </div>
        )
     
-
-
 }
 
 export default Admin;

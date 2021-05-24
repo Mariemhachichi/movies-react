@@ -2,15 +2,7 @@ import axios from 'axios';
 import React,{useEffect,useState} from 'react'
 import {Card,Button} from  'react-bootstrap'
 
-
 function Movie({search,getFavorites,getFavoritMovie}) {
-// const [film,setFilm]=useState([])
-// const getFilm= ()=>{
-    
-//     axios.get('http://localhost:3004/posts').then(
-//                    ((response)=> setFilm(response.data))
-//                    )
-//   }
 const [film, setFilm] = useState([])
 const getmovie = ()=>{
   axios.get('http://localhost:3004/posts')
@@ -19,8 +11,6 @@ const getmovie = ()=>{
 }
 useEffect(()=> {getmovie()
 },[])
-
-
     return(
       search ===''?
 
@@ -32,7 +22,7 @@ useEffect(()=> {getmovie()
     <Card.Title className="titr"> {el.Title} </Card.Title>
     <Card.Text className="txt" >{el.Awards}</Card.Text>
     <Card.Link className="link" href="#">View</Card.Link>
-    <Card.Title><Button onClick={()=>{ getFavorites(); getFavoritMovie(el)}}><i class="fas fa-heart fa-2x"></i></Button></Card.Title>                        
+    <Card.Title><Button className="btn" onClick={()=>{ getFavorites(); getFavoritMovie(el)}}><i class="fas fa-heart"></i> </Button></Card.Title>                        
   </Card.Body>
 </Card>
         )}</div>:
