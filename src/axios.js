@@ -3,8 +3,6 @@ import axios from "axios"
 import {Card,Button,Modal} from  'react-bootstrap'
 
 
- 
-
 function Movies(){
 
     //  axios film
@@ -12,14 +10,11 @@ function Movies(){
     const [Movie,setMovie]= useState([])
     const getMovie=()=> {
         axios.get('http://localhost:3004/posts').then((response) => {
-          
-            setMovie( response.data);
-           
+        setMovie( response.data);
           });
-
     }
-    useEffect(()=>{getMovie()},[])
 
+   useEffect(()=>{getMovie()},[])
    const deleteRow=(id, e)=>{
       axios.delete(`http://localhost:3004/posts/${id}`)  
         .then(response => {  
@@ -31,9 +26,9 @@ function Movies(){
       }
        
 
-      const [show, setShow] = useState(false);
-      const handleClose = () => setShow(false);
-      const handleShow = () => setShow(true);
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   return(
     <div  className="cart">
           {Movie.map((el) => (

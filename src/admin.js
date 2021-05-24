@@ -32,7 +32,6 @@ const Admin =() => {
         <Button variant="primary" onClick={() => setShow(true)}>
           Add Movie
         </Button>
-  
         <Modal
           show={show}
           onHide={() => setShow(false)}
@@ -41,7 +40,7 @@ const Admin =() => {
         >
           <Modal.Header closeButton>
             <Modal.Title id="example-custom-modal-styling-title">
-              Custom Modal Styling
+              Add Movie
             </Modal.Title>
           </Modal.Header>
           <Modal.Body> 
