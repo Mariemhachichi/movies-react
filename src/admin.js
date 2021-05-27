@@ -10,14 +10,13 @@ const Admin =() => {
           Img :""
          }
         )
-       const handleChange=(e)=>{
+       const handleChange=(e)=>{ 
     const {name,value}= e.target;
     setInput(
       {  ...input,
         [name]:value
     });
        }
-      
       /*add  */
     const handleSubmit=(e)=>{
     e.preventDefault()
@@ -50,11 +49,9 @@ const Admin =() => {
         <Form.Label>Title</Form.Label>
         <Form.Control  onChange={handleChange}  value={input.Title} name="Title"  type="text" placeholder="Title" />
         </Form.Group>
-    
-    
       <Form.Group>
-        <Form.Label>Desc</Form.Label>
-        <Form.Control onChange={handleChange} value={input.Genre} name="Desc" type="text" placeholder="Enter Genre" />
+        <Form.Label>Genre</Form.Label>
+        <Form.Control onChange={handleChange} value={input.Genre} name="Genre" type="text" placeholder="Entrer Genre" />
       </Form.Group>
     
     
