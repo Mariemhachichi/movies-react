@@ -3,7 +3,7 @@ import { Button, Form,Modal } from "react-bootstrap";
 import {useState} from 'react'
 import axios from 'axios'
 
-function Update({Movie,id}) {
+function Update({Movie,id,refrech}) {
  
  //  edit film
       const[input2,setInput2]=useState(
@@ -24,7 +24,8 @@ function Update({Movie,id}) {
             axios.put(`https://fir-movie-e73ed-default-rtdb.firebaseio.com/posts/${id}/.json`,input2)  
               .then(response => {  
                setInput2 (response.data)
-              }) 
+              })
+              .then(response=>refrech())
             }
 
   const [show, setShow] = useState(false);
@@ -56,14 +57,13 @@ function Update({Movie,id}) {
         <Form.Label>Img</Form.Label>
         <Form.Control value={input2.Img} onChange={handleChange2} defaultValue={Movie[id].Img}  name="Img"  type="text" placeholder="enter lien d'image" />
       </Form.Group>
-      <Button className="m-2" onClick={()=>{Update(id)}}>Submit</Button>
     </Form>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary" onClick={handleClose} >
+          <Button variant="primary" onClick={()=>{Update(id);handleClose()}} >
             Save Changes
           </Button>
         </Modal.Footer>

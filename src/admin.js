@@ -10,6 +10,10 @@ const Admin =() => {
           Img :""
          }
         )
+   
+          const refrech=()=>{
+            window.location.reload()
+          }
        const handleChange=(e)=>{ 
     const {name,value}= e.target;
     setInput(
@@ -17,18 +21,21 @@ const Admin =() => {
         [name]:value
     });
        }
+     
       /*add  */
     const handleSubmit=(e)=>{
     e.preventDefault()
     console.log('input',input)
     
-    axios.post('https://fir-movie-e73ed-default-rtdb.firebaseio.com/posts.json',JSON.stringify(input)).then((response)=> console.log(response))
+    axios.post('https://fir-movie-e73ed-default-rtdb.firebaseio.com/posts.json',JSON.stringify(input))
+    .then((response)=> console.log(response))
+    .then(response=>refrech())
     .catch((error)=> console.log('error'))
     }
     const [show, setShow] = useState(false);
       return(
         <>
-        <Button variant="primary" onClick={() => setShow(true)}>
+        <Button className="btnmodal" variant="primary" onClick={() => setShow(true)}>
           Add Movie
         </Button>
         <Modal
@@ -59,7 +66,7 @@ const Admin =() => {
         <Form.Label>Img</Form.Label>
         <Form.Control  onChange={handleChange}  value={input.Img} name="Img"  type="text" placeholder="enter lien d'image" />
       </Form.Group>
-      <Button type="submit" className="m-2">Submit</Button>
+      <Button type="submit" className="m-2 btnn">Add Movie</Button>
     </Form>
           </Modal.Body>
         </Modal>

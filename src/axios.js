@@ -7,13 +7,17 @@ import Update from './update';
 
 function Movies({input2,handleChange2}){
 
+  const refrech=()=>{
+    window.location.reload()
+  }
   //  dlete film
   useEffect(()=>{getMovie()},[])
   const deleteRow=(id, e)=>{
      axios.delete(`https://fir-movie-e73ed-default-rtdb.firebaseio.com/posts/${id}/.json`)  
        .then(response => {  
          console.log("response: delete", response);
-       }) 
+       })
+       .then(response=>refrech())
        .catch(err=> 
          console.log(err)
        );
@@ -25,7 +29,6 @@ function Movies({input2,handleChange2}){
     const getMovie=()=> {
      
         axios.get('https://fir-movie-e73ed-default-rtdb.firebaseio.com/posts.json').then((response) => {
-         
         setMovie(response.data);
         console.log(Movie)
           });
@@ -41,11 +44,11 @@ function Movies({input2,handleChange2}){
     <Card.Title className="titr"> {Movie[id].Title} </Card.Title>
     <Card.Text className="txt" >{Movie[id].Genre}</Card.Text>
     <Card.Link className="link" href="#"> 
-    </Card.Link>
+    </Card.Link> <div className="d-flex justify-content-around">
     <Button className="btn btn-danger btnt"  onClick={() => deleteRow(id)}>
       <i class="fas fa-trash"></i>
     </Button>
-    <Update input2={input2} Movie={Movie} id={id} handleChange2={handleChange2} />
+    <Update  refrech={refrech} input2={input2} Movie={Movie} id={id} handleChange2={handleChange2} /></div>
      </Card.Body>
 </Card>
           </div>

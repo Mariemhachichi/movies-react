@@ -1,6 +1,7 @@
-body, .nav{
+body{
     background-color: black!important;
 }
+.nav
 .logo{
     height: 50px;
 }
@@ -37,18 +38,17 @@ body, .nav{
 }
 /***part1***/
 .part1{
-    background-image: url('https://img5.cdn.cinoche.com/images/615de135d51bf6c4bb7041ae7fd38440.jpg');
+    background-image: url('https://static.kanopy.com/images/webshop-landing/hero-toppers/US/ws/1d-landing-page-hero-us-pl-4-colette.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    height: 550px !important;
+    height: 519.5px !important;
     width: 100% !important;
 }
 .par1{
     background-color: rgba(13, 13, 15, 0.5)!important;
-    height: 550px !important;
+    height: 519.5px !important;
     width: 100% !important;
-    padding-top:15em;
-    padding-left: 15rem;
+    padding-top:10em;
 }
 .par1 h1{
     color: #fff;
@@ -56,22 +56,19 @@ body, .nav{
 }
 .par1 h3{
     color: #fff;
-    padding-left: 10rem;
-    font-weight: bold;
+    font-size: 1.5rem;
+    padding-top: 20px;
 }
-.search{
-    padding-left: 10rem;
-    padding-top: 10px;
+.srch{
+    padding: 5px 5px 5px 5px;
+    border-radius: 20px;
+    border: 2px solid white !important;
+    background-color: transparent !important;
+    color: white !important;
+    margin-left: 0rem;
 }
-.search .button{
-    background-color: red !important;
-    border: none;
-    margin-left: -0.8em !important;
-    padding: 10px 50px 10px 50px;
-    color: #fff;
-}
-.search .srch{
-    padding: 20px 50px 20px 50px;
+.srch::placeholder{
+  color: rgba(245, 245, 245, 0.884);
 }
 /***footer***/
 .footer{
@@ -124,7 +121,30 @@ hr{
   border: none !important;
 }
 
+/****modal***/
+.btnmodal{
+  font-size: 20px !important;
+  font-weight: 500 !important;
+  line-height: 1 !important;
+  letter-spacing: .9px !important;
+  border: none !important;
+  background-color: #de3f00 !important;
+  padding: 16px 21px 13px !important;
+  margin-top: 31px !important;
+  margin-left: 28em !important;
+}
 
+.btnn{
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  line-height: 1 !important;
+  letter-spacing: .9px !important;
+  border: none !important;
+  background-color: #de3f00 !important;
+  padding: 10px 15px 13px !important;
+  margin-top: 31px !important;
+  float: right !important;
+}
 /* 
 .container{
     padding: 0 40px;
