@@ -22,7 +22,7 @@ const Admin =() => {
     e.preventDefault()
     console.log('input',input)
     
-    axios.post('http://localhost:3004/posts',input).then((response)=> console.log(response))
+    axios.post('https://fir-movie-e73ed-default-rtdb.firebaseio.com/posts.json',JSON.stringify(input)).then((response)=> console.log(response))
     .catch((error)=> console.log('error'))
     }
     const [show, setShow] = useState(false);

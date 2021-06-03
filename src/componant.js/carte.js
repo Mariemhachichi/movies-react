@@ -5,7 +5,7 @@ import {Card,Button} from  'react-bootstrap'
 function Movie({search,getFavorites,getFavoritMovie}) {
 const [film, setFilm] = useState([])
 const getmovie = ()=>{
-  axios.get('http://localhost:3004/posts')
+  axios.get('https://fir-movie-e73ed-default-rtdb.firebaseio.com/posts.json')
   .then ((response) => setFilm(response.data)
   );
 }

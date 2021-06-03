@@ -3,13 +3,13 @@ import { Button, Form,Modal } from "react-bootstrap";
 import {useState} from 'react'
 import axios from 'axios'
 
-function Update({el}) {
+function Update({Movie,id}) {
  
  //  edit film
       const[input2,setInput2]=useState(
-        {Title :el.Title,
-        Genre:el.Genre,
-        Img :el.Img,
+        {Title: Movie[id].Title,
+        Genre: Movie[id].Genre,
+        Img: Movie[id].Img,
        }
       )
       const handleChange2=(e)=>{ 
@@ -20,14 +20,12 @@ function Update({el}) {
         });
            }
 
-           const Update=(id, e)=>{
-            axios.put(`http://localhost:3004/posts/${id}`,input2)  
+           const Update=(id)=>{
+            axios.put(`https://fir-movie-e73ed-default-rtdb.firebaseio.com/posts/${id}/.json`,input2)  
               .then(response => {  
                setInput2 (response.data)
               }) 
-
             }
-
 
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -48,17 +46,17 @@ function Update({el}) {
         <Form >
     <Form.Group>
         <Form.Label>Title</Form.Label>
-        <Form.Control value={input2.Title} onChange={handleChange2} defaultValue={el.Title} name="Title"  type="text" placeholder="Title" />
+        <Form.Control value={input2.Title} onChange={handleChange2} defaultValue={Movie[id].Title} name="Title"  type="text" placeholder="Title" />
         </Form.Group>
       <Form.Group>
         <Form.Label>Genre</Form.Label>
-        <Form.Control value={input2.Genre} onChange={handleChange2} defaultValue={el.Genre} name="Genre" type="text" placeholder="Enter Genre" />
+        <Form.Control value={input2.Genre} onChange={handleChange2} defaultValue={Movie[id].Genre} name="Genre" type="text" placeholder="Enter Genre" />
       </Form.Group>
       <Form.Group>
         <Form.Label>Img</Form.Label>
-        <Form.Control value={input2.Img} onChange={handleChange2} defaultValue={el.Img}  name="Img"  type="text" placeholder="enter lien d'image" />
+        <Form.Control value={input2.Img} onChange={handleChange2} defaultValue={Movie[id].Img}  name="Img"  type="text" placeholder="enter lien d'image" />
       </Form.Group>
-      <Button type="submit" className="m-2" onSubmit={()=>{Update(el.id)}}>Submit</Button>
+      <Button className="m-2" onClick={()=>{Update(id)}}>Submit</Button>
     </Form>
         </Modal.Body>
         <Modal.Footer>
@@ -73,7 +71,6 @@ function Update({el}) {
     </>
 </div>
   )
-  {/* end modal */}
       }
 
 export default Update
