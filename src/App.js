@@ -2,7 +2,6 @@ import './App.css';
 import {BrowserRouter as Router,Route } from "react-router-dom";
 import HOme from "./home";
 import Favori from "./favoris";
-
 import {useState} from "react";
 import Dash from './dashb';
 

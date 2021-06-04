@@ -10,7 +10,7 @@ const Favor = ({favoritMovie, favorites}) => {
        {favoritMovie.map((el)=>
           <div>
        <div className="card ms-3">
-       <Card className="carte" style={{ width: '18rem' }}>
+       <Card className="carte" style={{width:'18rem'}}>
   <Card.Img className="img" variant="top" src={el.Images} />
   <Card.Body>
     <Card.Title className="titr"> {el.Title} </Card.Title>
@@ -20,11 +20,8 @@ const Favor = ({favoritMovie, favorites}) => {
 </Card>    
         </div>
          </div>
-         
-          
          )
        }
-
 </div>  
     </div>
    )
