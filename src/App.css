@@ -1,9 +1,12 @@
 body{
     background-color: black!important;
 }
-.nav
+.nav{
+  background-color: rgba(255, 255, 255, 0.2);
+}
 .logo{
-    height: 50px;
+    height: 60px;
+    width: 85px;
 }
 /***cartes***/
 .cart{
@@ -12,13 +15,14 @@ body{
     justify-content: space-evenly;
   }
   .carte{
-    margin-top: 10%;
     text-align: center;
     border: #333 1px solid !important;
     background-color: #222 !important;
+    margin: 20px !important;
+    height: 27rem !important;
   }
   .img{
-      height: 300px !important;
+      height: 250px !important;
   }
   .txt{
       text-align: justify !important;
@@ -34,21 +38,20 @@ body{
   .link{
     float: left;
     color: #fff;
-    border-bottom: 1px solid #fff;
+    margin-top: 10px;
 }
 /***part1***/
 .part1{
     background-image: url('https://static.kanopy.com/images/webshop-landing/hero-toppers/US/ws/1d-landing-page-hero-us-pl-4-colette.jpg');
-    background-size: cover;
+    background-size: 100%;
     background-repeat: no-repeat;
-    height: 519.5px !important;
     width: 100% !important;
 }
 .par1{
     background-color: rgba(13, 13, 15, 0.5)!important;
-    height: 519.5px !important;
+    height: 600px !important;
     width: 100% !important;
-    padding-top:10em;
+    padding-top:12em;
 }
 .par1 h1{
     color: #fff;
@@ -60,15 +63,16 @@ body{
     padding-top: 20px;
 }
 .srch{
-    padding: 5px 5px 5px 5px;
+    padding: 2px !important;
     border-radius: 20px;
     border: 2px solid white !important;
     background-color: transparent !important;
     color: white !important;
-    margin-left: 0rem;
+   
 }
 .srch::placeholder{
   color: rgba(245, 245, 245, 0.884);
+  padding-left: 1em !important;
 }
 /***footer***/
 .footer{
@@ -102,19 +106,31 @@ hr{
   background-color: white;
   border-radius: 50%;
   color: black;
-  font-size: 20px;
+  font-size: 15px;
   padding-left: 0.3rem;
   padding-right: 0.3rem;
   margin-top: 0.2rem;
 
 }
-.fa-heart{
+.fa-home{
   border-radius: 50%;
   color: white;
-  font-size: 20px;
+  font-size: 25px;
   padding-left: 0.3rem;
   padding-right: 0.3rem;
   margin-top: 0.2rem;
+}
+.fa-heart{
+  border-radius: 50%;
+  color: white;
+  font-size: 25px;
+  padding-left: 0.3rem;
+  padding-right: 0.3rem;
+  margin-top: 0.2rem;
+  margin-right: -13px;
+}
+.fa-heart:hover{
+ color: #de3f00;
 }
 .btnt{
   background-color: transparent !important;
@@ -144,6 +160,108 @@ hr{
   padding: 10px 15px 13px !important;
   margin-top: 31px !important;
   float: right !important;
+}
+/*partie2*/
+.part2{
+  height: 50rem !important;
+  background-image: url('https://www.kanopy.com/images/webshop-landing/default-locale/call-to-action-bg.jpg') !important;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.parti2{
+  float: right;
+  margin-top: 12rem;
+  margin-right: 4em;
+  color: white;
+}
+.parti2 p{
+  padding: 20px 0 20px 0px;
+  font-size: 20px;
+  font-weight: lighter;
+}
+.BTN{
+  background-color: #eb4700;
+  padding: 10px 30px 10px 30px;
+  color: white;
+  border: none;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.part1 h4{
+  color: white;
+  text-align: center;
+  font-size: 2rem;
+  padding-bottom: 40px;
+  font-weight: bold;
+}
+.part3 h4{
+  color: white;
+  text-align: center;
+  font-size: 2rem;
+  padding: 40px;
+  font-weight: bold;
+}
+.bttnt{
+  padding: 10px 20px 10px 20px;
+  color: white;
+  background-color: transparent;
+  border: 5px solid white;
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-left: 26em;
+  margin-top: -200px !important;
+  margin-bottom: 40px;
+}
+.part4 h4{
+  color: white;
+  text-align: center;
+  font-size: 2rem;
+  padding-top: 80px;
+  font-weight: bold;
+}
+.part4{
+  height: 50rem !important;
+  background-image: url('https://www.kanopy.com/images/webshop-landing/default-locale/Devices-Background-Gradient.jpg') !important;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.imm{
+  margin-left: 15rem;
+  margin-top: 3em;
+}
+.open{
+  background-color: transparent !important;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  border-bottom: 1px solid white !important;
+  color: #333 !important;
+}
+.hr{
+      background: linear-gradient( to right,#d12027 0%,#e65525 22%,#f7901e 91%,#fdba12 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d12027',endColorstr='#fdba12',GradientType=1);
+    width: 100%;
+    height: 3px;
+}
+
+
+.react-rater-star.is-active{
+  color: yellow !important;
+  font-size: 1.5rem !important;
+}
+.react-rater-star {
+  cursor: pointer;
+  color: rgb(131, 127, 26) !important;
+  font-size: 1.5rem !important;
+  position: relative;
+}
+  .react-rater-star.is-active-half:before {
+    color: rgb(168, 153, 20)!important;
+    content: '\2605';
+    position: absolute;
+    left: 0;
+    width: 50%;
+    overflow: hidden;
 }
 /* 
 .container{

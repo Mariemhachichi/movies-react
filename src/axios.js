@@ -2,7 +2,8 @@ import React, { useEffect,useState } from 'react';
 import axios from "axios"
 import {Card,Button} from 'react-bootstrap'
 import Update from './update';
-
+import Rater from 'react-rater'
+import 'react-rater/lib/react-rater.css'
 
 
 function Movies({input2,handleChange2}){
@@ -38,7 +39,7 @@ function Movies({input2,handleChange2}){
     <div  className="cart">
           {Object.keys(Movie).map((id) => (
             <div>
-            <Card className="carte" style={{ width: '18rem' }}>
+            <Card className="carte" style={{ width: '15rem' }}>
   <Card.Img className="img" variant="top" src={Movie[id].Images} />
   <Card.Body>
     <Card.Title className="titr"> {Movie[id].Title} </Card.Title>
@@ -49,6 +50,7 @@ function Movies({input2,handleChange2}){
       <i class="fas fa-trash"></i>
     </Button>
     <Update  refrech={refrech} input2={input2} Movie={Movie} id={id} handleChange2={handleChange2} /></div>
+    <Card.Link className="link" href="#"><Rater total={5} rating={Movie[id].Rate} /></Card.Link>
      </Card.Body>
 </Card>
           </div>
